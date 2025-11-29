@@ -1,8 +1,10 @@
 package com.laboratorio.chad.Service.Lector;
 
+import java.util.Scanner;
+
 public interface LectorLaboratorioChad {
 
-    void leerInvestigador(String nombre, int edad);
+    void leerInvestigador(Scanner scanner);
 
-    void leerExperimento();
+    void leerExperimento(Scanner scanner);
 }

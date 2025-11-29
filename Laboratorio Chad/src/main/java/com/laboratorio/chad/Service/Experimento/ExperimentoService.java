@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ExperimentoService {
 
-    List<Experimento> experimentosRealizados(List<Experimento> experimentoList);
+    void experimentosRealizados(List<Experimento> experimentoList);
 
     int totalExperimentosExitosos(List<Experimento> experimentosList);
 

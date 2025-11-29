@@ -21,7 +21,7 @@ public class InvestigadorRepositoryImpl implements InvestigadorRepository {
     @Override
     public Investigador registrarInvestigador(String nombre, int edad, int id) {
         //int id = rand.nextInt(100);  ---------------- este va donde se carga el investigador
-        Investigador investigador = new Investigador(nombre, edad, id);
+        Investigador investigador = new Investigador(nombre, edad, id, 0);
         return this.registrarInvestigador(investigador);
     }
 

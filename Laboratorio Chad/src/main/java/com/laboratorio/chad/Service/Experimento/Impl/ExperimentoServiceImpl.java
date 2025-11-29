@@ -7,8 +7,11 @@ import java.util.List;
 
 public class ExperimentoServiceImpl implements ExperimentoService {
     @Override
-    public List<Experimento> experimentosRealizados(List<Experimento> experimentoList) {
-        return List.of();
+    public void experimentosRealizados(List<Experimento> experimentoList) {
+        for (Experimento expi : experimentoList) {
+            System.out.printf("| %-22s | %-8d | %5s | %-8s |%n", expi.getNombre(), expi.getDuracion(), expi.getResultado(), expi.getTipo_experimento());
+        }
+
     }
 
     @Override
@@ -50,11 +53,28 @@ public class ExperimentoServiceImpl implements ExperimentoService {
     @Override
     public int promedioDuracionExperimento(List<Experimento> experimentosList) {
 
-        return 0;
+        int duracionAcumulada = 0;
+        int contadorExperimentos = 0;
+        for (Experimento expi : experimentosList) {
+            duracionAcumulada += expi.getDuracion();
+            contadorExperimentos++;
+        }
+        return duracionAcumulada / contadorExperimentos;
     }
 
     @Override
     public int porcentajeExitoGlobalExperimentos(List<Experimento> experimentoList) {
-        return 0;
+        int porcentajeExito = 0;
+        int contadorExperimentos = 0;
+
+        for (Experimento expi : experimentoList) {
+            contadorExperimentos++;
+            if (expi.getResultado()) {
+                porcentajeExito++;
+            }
+        }
+        double porExito = ((double) porcentajeExito / contadorExperimentos) * 100;
+
+        return (int) porExito;
     }
 }
