@@ -6,6 +6,7 @@ import com.proyecto.alejandro.catan.moodtrack.Mapper.Perfil.PerfilMapper;
 import com.proyecto.alejandro.catan.moodtrack.Model.Usuario;
 
 import java.util.List;
+import java.util.Optional;
 
 public final class UsuarioMapper {
 
@@ -22,6 +23,18 @@ public final class UsuarioMapper {
         usuarioDto.setEmail(usuario.getEmail());
         usuarioDto.setPerfilUsuarioDto(PerfilMapper.toDto(usuario.getPerfil()));
         return usuarioDto;
+
+    }
+
+    public static UsuarioCreateDto toCreateDto(Usuario usuario){
+
+        if(usuario == null) return null;
+
+        UsuarioCreateDto usuarioCreateDto = new UsuarioCreateDto();
+        usuarioCreateDto.setNombre(usuario.getNombre());
+        usuarioCreateDto.setEmail(usuario.getEmail());
+        usuarioCreateDto.setPerfilUsuarioDto(PerfilMapper.toDto(usuario.getPerfil()));
+        return usuarioCreateDto;
 
     }
 
