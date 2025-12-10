@@ -12,7 +12,7 @@ public final class PerfilMapper {
         if(perfilUsuario == null) return null;
 
         PerfilUsuarioDto perfilUsuarioDto = new PerfilUsuarioDto();
-        perfilUsuarioDto.setId(perfilUsuario.getId());
+        //perfilUsuarioDto.setId(perfilUsuario.getId());
         perfilUsuarioDto.setBio(perfilUsuario.getBio());
         perfilUsuarioDto.setColorFavorito(perfilUsuario.getColorFavorito());
         perfilUsuarioDto.setFraseDelDia(perfilUsuario.getFraseDelDia());

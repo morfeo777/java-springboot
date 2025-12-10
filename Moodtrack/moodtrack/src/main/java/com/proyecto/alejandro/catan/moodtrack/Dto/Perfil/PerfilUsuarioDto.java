@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PerfilUsuarioDto {
 
-   private Long id;
+  // private Long id;
    @NotBlank(message = "La biografia no puede ser vacia")
    @Size(min = 2, max = 500, message = "La Biografia tiene que estar entre 2 y 500 caracteres")
    private String bio;

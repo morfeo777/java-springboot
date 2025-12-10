@@ -76,7 +76,7 @@ public class UsuarioController {
         return ResponseEntity.ok( usuarioDto );
     }
 
-    @PutMapping("/perfil/{id}") // PathVariable es el {id}
+    @PutMapping("/{id}/perfil") // PathVariable es el {id}  /{id}/perfil
     public ResponseEntity<UsuarioDto> updatePerfilUsuario(@PathVariable(name = "id") UUID id, @Valid @RequestBody PerfilUsuarioDto perfilUsuarioDto){
         log.info("Solicitud para actualizar perfil de usuario con id {}", id);
         UsuarioDto usuarioDto = usuarioService.updatePerfilUsuario( id, perfilUsuarioDto );
